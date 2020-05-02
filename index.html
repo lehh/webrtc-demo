@@ -1,0 +1,40 @@
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.27.4.min.js"></script>
+<script src="messagingService.js"></script>
+
+<script async="" src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+<script src="webrtc.js"></script>
+<script src="index.js"></script>
+
+<button id="connectBtn" class="notConnected">Connect to Chat</button>
+<input type="text" id="channel" class="notConnected" placeholder="channel" />
+<button id="disconnectBtn" class="connected" hidden>Leave Chat</button>
+
+<div id="panel" class="connected" hidden>
+    <h3>
+        <p id="myUserId"></p>
+    </h2>
+
+    <div id="onlineUsers">
+        <p>Online Users</p>
+        <div id="userList"></div>
+    </div>
+
+    <div id="chatPanel" style="border: solid;border-color: #80808040;border-width: thin">
+        <hidden id="chatChannel"></hidden>
+        <textarea id='messageText'></textarea>
+        <button id='sendMessage'>send</button>
+
+        <button id="requestVideo">request video</button>
+
+        <div id='chatMessages' style="border: solid;border-color: #6c8e4d85;"></div>
+
+        <div id="video" hidden>
+            <video id="localVideo" autoplay="true" muted="true" style="width: 250px;"></video>
+            <video id="remoteVideo" autoplay="true" muted="true" style="width: 250px;"></video>
+            <button id='hangUp' disabled>hang up</button>
+        </div>
+    </div>
+</div>
